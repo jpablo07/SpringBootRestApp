@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment{
-        repo = "https://github.com/kishancs2020/SpringBootRestApp"
+        repo = "https://github.com/jpablo07/SpringBootRestApp.git"
         repobranch = "master"
         git_creds = "44df6ab2-9024-43cd-93cd-e7a550e66aab"
     }
