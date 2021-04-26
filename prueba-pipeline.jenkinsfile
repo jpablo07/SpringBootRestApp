@@ -20,7 +20,8 @@ pipeline{
             steps{
                 dir("${WORKSPACE}"){
                     withGradle(){
-                        sh "./gradlew -v"
+                        sh "chmod +x gradlew"
+                        sh "./gradlew clean build --no-daemon"
                     }
                 }
             }
