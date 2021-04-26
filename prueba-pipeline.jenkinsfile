@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+
+    environment{
+        repo = "https://github.com/kishancs2020/SpringBootRestApp"
+        repobranch = "master"
+        git_creds = "44df6ab2-9024-43cd-93cd-e7a550e66aab"
+    }
+
+    stages{
+        stage('Clone'){
+            steps{
+                dir("${WORKSPACE}"){
+                    git credentialsId: "${git_creds}", url: "${repo}", branch: "${repobranch}"
+                    sh 'echo "Construyendo la Aplicación"'
+                }
+            }
+        }
+    }
+}
