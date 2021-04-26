@@ -16,5 +16,14 @@ pipeline{
                 }
             }
         }
+        stage('Build'){
+            steps{
+                dir("${WORKSPACE}"){
+                    withGradle(){
+                        sh "./gradlew -v"
+                    }
+                }
+            }
+        }
     }
 }
